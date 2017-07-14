@@ -1,5 +1,13 @@
 import os
 import re
+import sys
+
+
+if sys.version_info.major == 2:
+    string_type = basestring
+else:
+    string_type = str
+
 
 class TransformingList(object):
     __slots__ = ('_list', '_transformer')
@@ -75,7 +83,7 @@ def find_files(name_or_names, paths, matches=None):
     yielded value is the full path to a matching file.
     """
 
-    if isinstance(name_or_names, str):
+    if isinstance(name_or_names, string_type):
         name_or_names = [name_or_names]
 
     if matches is None:

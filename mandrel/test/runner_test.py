@@ -33,10 +33,8 @@ KNOWN_PATH = os.path.realpath('')
 
 if sys.version_info.major > 2:
     builtin_name = 'builtins'
-    exec_name = 'exec'
 else:
     builtin_name = '__builtin__'
-    exec_name = 'execfile'
 
 
 class TestRunner(unittest.TestCase):
