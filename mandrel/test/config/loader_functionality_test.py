@@ -1,9 +1,10 @@
-import contextlib
 import unittest
+
 import mock
+
 import mandrel
+import mandrel.bootstrap
 from mandrel import exception
-from mandrel.test import utils
 
 try:
     # python 3 compatibility

@@ -1,8 +1,10 @@
-import unittest
 import mock
+
+import mandrel.bootstrap
 import mandrel.config
-from mandrel.test import utils
 from mandrel import exception
+from mandrel.test import utils
+
 
 class TestConfigurationClass(utils.TestCase):
     @mock.patch('mandrel.config.core.get_configuration')

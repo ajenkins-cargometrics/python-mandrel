@@ -31,7 +31,7 @@ def scenario(*opts, **driver_opt):
 
 KNOWN_PATH = os.path.realpath('')
 
-if sys.version_info.major > 2:
+if sys.version_info[0] > 2:
     builtin_name = 'builtins'
 else:
     builtin_name = '__builtin__'
