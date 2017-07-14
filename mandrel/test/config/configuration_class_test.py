@@ -45,7 +45,7 @@ class TestConfigurationClass(utils.TestCase):
         self.assertEqual(config, c.configuration)
         self.assertEqual((), c.chain)
 
-        chain = tuple(mock.Mock(name='Chain%d' % x) for x in xrange(3))
+        chain = tuple(mock.Mock(name='Chain%d' % x) for x in range(3))
         c = mandrel.config.core.Configuration(config, *chain)
         self.assertEqual(config, c.configuration)
         self.assertEqual(chain, c.chain)
@@ -136,7 +136,7 @@ class TestConfigurationClass(utils.TestCase):
         self.assertEqual(loader.return_value, c.configuration)
         self.assertEqual((), c.chain)
 
-        chain = tuple(mock.Mock() for x in xrange(5))
+        chain = tuple(mock.Mock() for x in range(5))
         c = mandrel.config.core.Configuration.get_configuration(*chain)
         self.assertEqual(loader.return_value, c.configuration)
         self.assertEqual(chain, c.chain)
