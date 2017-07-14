@@ -1,6 +1,5 @@
 import mock
 
-import mandrel.bootstrap
 import mandrel.config
 from mandrel import exception
 from mandrel.test import utils
@@ -23,7 +22,7 @@ class TestConfigurationClass(utils.TestCase):
             result = mandrel.config.core.Configuration.get_logger_name('some.nested.name')
             self.assertEqual(mock_name + '.some.nested.name', result)
 
-    @mock.patch('mandrel.bootstrap')
+    @mock.patch('mandrel.bootstrap', create=True)
     @mock.patch('mandrel.config.core.Configuration.get_logger_name')
     def testGetLogger(self, get_logger_name, bootstrap):
         mock_name = str(mock.Mock(name='AnotherMockConfigurationName'))

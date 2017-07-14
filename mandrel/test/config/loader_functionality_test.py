@@ -3,7 +3,6 @@ import unittest
 import mock
 
 import mandrel
-import mandrel.bootstrap
 from mandrel import exception
 
 try:
@@ -15,7 +14,7 @@ except ImportError:
 
 def scenario(func):
     def wrapper(*a, **kw):
-        with mock.patch('mandrel.bootstrap') as bootstrap:
+        with mock.patch('mandrel.bootstrap', create=True) as bootstrap:
             if hasattr(mandrel, 'config'):
                 reload(mandrel.config.core)
                 reload(mandrel.config)
